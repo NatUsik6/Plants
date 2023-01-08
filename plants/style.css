@@ -194,7 +194,7 @@ h2 {
 }
 
 .first-card-image {
-    background-image: url(/plants/assets/first-card-image.jpg);
+    background-image: url(assets/first-card-image.jpg);
     background-size: cover;
     background-position: center;
     width: 330px;
@@ -240,7 +240,7 @@ figcaption {
 }
 
 .second-card-image {
-    background-image: url(/plants/assets/second-card-image.jpg);
+    background-image: url(assets/second-card-image.jpg);
     background-size: cover;
     background-position: center;
     width: 330px;
@@ -249,7 +249,7 @@ figcaption {
 }
 
 .third-card-image {
-    background-image: url(/plants/assets/third-card-image.jpg);
+    background-image: url(assets/third-card-image.jpg);
     background-size: cover;
     background-position: center;
     width: 330px;
@@ -258,7 +258,7 @@ figcaption {
 }
 
 .fourth-card-image {
-    background-image: url(/plants/assets/fourth-card-image.jpg);
+    background-image: url(assets/fourth-card-image.jpg);
     background-size: cover;
     background-position: center;
     width: 330px;
@@ -267,7 +267,7 @@ figcaption {
 }
 
 .fifth-card-image {
-    background-image: url(/plants/assets/fifth-card-image.jpg);
+    background-image: url(assets/fifth-card-image.jpg);
     background-size: cover;
     background-position: center;
     width: 330px;
@@ -276,7 +276,7 @@ figcaption {
 }
 
 .sixth-card-image {
-    background-image: url(/plants/assets/sixth-card-image.jpg);
+    background-image: url(assets/sixth-card-image.jpg);
     background-size: cover;
     background-position: center;
     width: 330px;
