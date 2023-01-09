@@ -22,11 +22,65 @@ a:hover {
     color: #E06733;
 }
 
+button {
+    font-family: 'Inika', serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #E06733;
+    border-radius: 5px;
+    width: 160px;
+    height: 50px;
+    border: 1px solid #E06733;
+    background-color: transparent;
+    transition: .3s;
+}
+
+button:hover {
+    color: #FFFFFF;
+    background: #E06733;
+    cursor: pointer;
+}
+
+ul {
+    padding: 0;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #717171;
+    line-height: 35px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 45px;
+    line-height: 50px;
+    font-weight: 700;
+    color: #717171;
+    margin-top: 0;
+}
+
+h2 {
+    font-family: 'Inika', serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 52px;
+    color: #499A18;
+    width: 300px;
+    margin: 0;
+}
+
 header {
     height: 134px;
     background-color: #EDF2EC;
     display: flex;
     align-items: center;
+}
+
+section {
+    overflow: auto;
 }
 
 .logo:before {
@@ -61,7 +115,7 @@ header {
 }
 
 .nav-link {
-    padding: 0 25px;
+    padding: 0 0 0 47px;
 }
 
 .section-container {
@@ -72,64 +126,37 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 60px auto;
+    margin: 62px auto 63px auto;
 }
 
-section {
-    overflow: auto;
+.leafs {
+    width: 448.8px;
+    height: 407.36px;
 }
 
 .welcome {
-    width: 550px;
+    width: 549px;
     font-family: 'Inter', sans-serif;
-}
-
-h1 {
-    font-size: 45px;
-    font-weight: 700;
-    color: #717171;
 }
 
 .green-text {
     color: #499A18;
 }
 
-p {
-    font-size: 20px;
-    font-weight: 400;
-    color: #717171;
-    line-height: 35px;
-    margin: 0;
-}
-
 .welcome-text {
-    margin: 40px 0;
+    margin: 42px 0 48px 0;
+    width: 525px;
 }
 
-.about-text {
-    margin-top: 40px;
-    margin-bottom: 0;
-}
-
-button {
-    font-family: 'Inika', serif;
-    font-size: 16px;
+.learn-more-button {
+    width: 158px;
+    height: 44px;
+    font-family: 'Inter', sans-serif;
     text-transform: uppercase;
+    color: black;
+    border-radius: 10px;
+    font-size: 16px;
     line-height: 20px;
-    font-weight: 400;
-    color: #E06733;
-    border-radius: 5px;
-    width: 160px;
-    height: 50px;
-    border: 1px solid #E06733;
-    background-color: transparent;
-    transition: .3s;
-}
-
-button:hover {
-    color: #FFFFFF;
-    background: #E06733;
-    cursor: pointer;
 }
 
 .section-welcome {
@@ -141,7 +168,7 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     background-color: #FFFFFF;
-    margin: 100px auto;
+    margin: 93px auto 94px auto;
 }
 
 .about {
@@ -153,9 +180,15 @@ button:hover {
     font-family: 'Inika', serif;
     font-size: 40px;
     font-weight: 400;
-    line-height: 50px;
+    line-height: 52px;
     color: #499A18;
     width: 460px;
+}
+
+.about-text {
+    margin-top: 40px;
+    margin-bottom: 0;
+    line-height: 30px;
 }
 
 .orange-text {
@@ -174,23 +207,13 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1000px;
+    width: 1007px;
 }
 
 .services-buttons {
     width: 560px;
     display: flex;
     justify-content: space-between;
-}
-
-h2 {
-    font-family: 'Inika', serif;
-    font-size: 40px;
-    font-weight: 400;
-    line-height: 52px;
-    color: #499A18;
-    width: 300px;
-    margin: 0;
 }
 
 .first-card-image {
@@ -204,14 +227,13 @@ h2 {
 
 figure {
     margin: 0 0 55px 0;
-
 }
 
 figcaption {
     border-radius: 0 0 20px 20px;
     border: #E3E1D5 1px solid;
-    width: 330px;
-    height: 100px;
+    width: 328px;
+    height: 98px;
 }
 
 .card-title {
@@ -219,8 +241,9 @@ figcaption {
     font-weight: 700;
     font-size: 20px;
     line-height: 20px;
+    height: 24px;
     color: #E06733;
-    margin: 10px;
+    margin: 10px 0 0 0;
     text-align: center;
 }
 
@@ -229,11 +252,11 @@ figcaption {
     font-size: 16px;
     line-height: 20px;
     text-align: center;
-    margin: 17px;
+    margin: 10px 0 0 0;
 }
 
 .services {
-    margin: 80px 0 65px 0;
+    margin: 80px 0 66px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -285,7 +308,7 @@ figcaption {
 }
 
 .section-prices .section-container {
-    margin: 40px auto;
+    margin: 40px auto 115px auto;
     display: flex;
     justify-content: space-between;
 }
@@ -301,6 +324,7 @@ figcaption {
 .prices-title {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
+    line-height: 48.41px;
     color: black;
 }
 
@@ -362,9 +386,14 @@ figcaption {
     width: 455px;
 }
 
+.contact-us-button {
+    width: 162px;
+    font-weight: 700;
+}
+
 .leafs2 {
-    width: 150px;
-    height: 175px;
+    width: 152px;
+    height: 174.99px;
     display: block;
     margin-right: 0;
     margin-left: auto;
@@ -375,29 +404,29 @@ figcaption {
 }
 
 .section-contacts .section-container {
-    margin: auto;
+    margin: 60px auto auto auto;
     background-image: url(assets/contact_woman_1.png);
     background-size: contain;
     background-position: left bottom;
     background-repeat: no-repeat;
-    height: 550px;
+    height: 490px;
 }
 
 .contacts-green {
     text-align: center;
-    margin: 60px auto auto auto;
+    margin: 0 auto auto auto;
     font-weight: 700;
 }
 
 .contacts-city {
-    width: 450px;
+    width: 395px;
     height: 50px;
     background-color: #D6E7D2;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
-    margin: 50px 0 auto auto;
+    padding: 0 35px 0 20px;
+    margin: 37px 0 auto auto;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     transition: .3s;
@@ -407,6 +436,7 @@ figcaption {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 20px;
+    letter-spacing: 0.05em;
     color: #717171;
 }
 
@@ -461,6 +491,6 @@ figcaption {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    width: 200px;
-    padding: 0;
+    width: 188px;
+    padding-left: 12px;
 }
