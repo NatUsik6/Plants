@@ -337,6 +337,11 @@ figcaption {
     align-items: center;
     padding: 0 40px;
     cursor: pointer;
+    transition: .3s;
+}
+
+.price-item:hover {
+    background-color: #C1E698;
 }
 
 .arrow {
@@ -395,6 +400,7 @@ figcaption {
     margin: 50px 0 auto auto;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    transition: .3s;
 }
 
 .city {
@@ -402,6 +408,11 @@ figcaption {
     font-weight: 400;
     font-size: 20px;
     color: #717171;
+}
+
+.contacts-city:hover {
+    background-color: #C1E698;
+    box-shadow: 0 0 0;
 }
 
 .arrow2 {
@@ -431,6 +442,11 @@ figcaption {
     font-size: 20px;
     line-height: normal;
     color: black;
+}
+
+.footer-data a:hover {
+    font-weight: 700;
+    color: #E06733;
 }
 
 .rss {
