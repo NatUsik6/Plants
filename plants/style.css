@@ -3,7 +3,6 @@ html {
 }
 
 body {
-    min-width: 1440px;
     margin: 0;
     padding: 0;
 }
@@ -77,6 +76,7 @@ header {
     background-color: #EDF2EC;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 section {
@@ -99,7 +99,7 @@ section {
     justify-content: space-between;
     align-items: center;
     width: 1220px;
-    padding: 0 20px;
+    margin: 0 50px;
 }
 
 .nav {
@@ -116,10 +116,6 @@ section {
 
 .nav-link {
     padding: 0 0 0 47px;
-}
-
-.section-container {
-    max-width: 1220px;
 }
 
 .section-welcome .section-container {
@@ -145,7 +141,6 @@ section {
 
 .welcome-text {
     margin: 42px 0 48px 0;
-    width: 525px;
 }
 
 .learn-more-button {
@@ -455,7 +450,6 @@ figcaption {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1220px;
     height: 130px;
 }
 
@@ -493,4 +487,49 @@ figcaption {
     list-style: none;
     width: 188px;
     padding-left: 12px;
+}
+
+@media (min-width: 1440px) {
+    body {
+        min-width: 1440px;
+    }
+
+    .section-container {
+        max-width: 1220px;
+    }
+
+    .footer-container {
+        max-width: 1220px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 117px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .section-welcome .section-container {
+        margin: 40px 50px 70px 50px;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+    }
+
+    .leafs {
+        height: 254px;
+        width: 280px;
+    }
+      
+    .welcome {
+        width: 346px;
+    }
+
+    .welcome-text {
+        font-size: 16px;
+        line-height: 25px;
+        margin: 30px 0 36px 5px;
+    }
 }
