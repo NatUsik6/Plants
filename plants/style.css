@@ -211,15 +211,6 @@ section {
     justify-content: space-between;
 }
 
-.first-card-image {
-    background-image: url(assets/first-card-image.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 330px;
-    height: 350px;
-    border-radius: 20px 20px 0 0;
-}
-
 figure {
     margin: 0 0 55px 0;
 }
@@ -257,49 +248,36 @@ figcaption {
     justify-content: space-between;
 }
 
-.second-card-image {
-    background-image: url(assets/second-card-image.jpg);
+.card-image {
     background-size: cover;
     background-position: center;
     width: 330px;
     height: 350px;
     border-radius: 20px 20px 0 0;
+}
+
+.first-card-image {
+    background-image: url(assets/first-card-image.jpg);
+}
+
+.second-card-image {
+    background-image: url(assets/second-card-image.jpg);
 }
 
 .third-card-image {
     background-image: url(assets/third-card-image.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 330px;
-    height: 350px;
-    border-radius: 20px 20px 0 0;
 }
 
 .fourth-card-image {
     background-image: url(assets/fourth-card-image.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 330px;
-    height: 350px;
-    border-radius: 20px 20px 0 0;
 }
 
 .fifth-card-image {
     background-image: url(assets/fifth-card-image.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 330px;
-    height: 350px;
-    border-radius: 20px 20px 0 0;
 }
 
 .sixth-card-image {
     background-image: url(assets/sixth-card-image.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 330px;
-    height: 350px;
-    border-radius: 20px 20px 0 0;
 }
 
 .section-prices .section-container {
@@ -493,7 +471,9 @@ figcaption {
     body {
         min-width: 1440px;
     }
+}
 
+@media (min-width: 1220px) {
     .section-container {
         max-width: 1220px;
     }
@@ -522,7 +502,7 @@ figcaption {
         height: 254px;
         width: 280px;
     }
-      
+
     .welcome {
         width: 346px;
     }
@@ -531,5 +511,126 @@ figcaption {
         font-size: 16px;
         line-height: 25px;
         margin: 30px 0 36px 5px;
+    }
+
+    .section-about .section-container {
+        margin: 40px 50px 95px 50px;
+        flex-direction: column;
+    }
+
+    .about {
+        width: auto;
+    }
+
+    .about-title {
+        text-align: center;
+        width: 423px;
+        margin: 0 auto;
+        font-size: 35px;
+        line-height: 46px;
+    }
+
+    .about-text {
+        margin-top: 50px;
+    }
+
+    .houseplants {
+        width: 250px;
+        height: 258px;
+        margin-top: 68px;
+    }
+
+    .section-services .section-container {
+        margin: 60px 50px 34px 50px;
+    }
+
+    .services-content {
+        flex-direction: column;
+        align-items: flex-start;
+        width: auto;
+    }
+
+    .services-title {
+        font-size: 35px;
+        line-height: 46px;
+    }
+
+    .services-buttons {
+        margin-top: 40px;
+    }
+
+    .services {
+        margin-top: 40px;
+        margin-bottom: 0;
+    }
+
+    figure {
+        margin-bottom: 38px;
+    }
+
+    .card-image {
+        width: 280px;
+        height: 350px;
+    }
+
+    figcaption {
+        width: 202px;
+        height: 98px;
+        padding: 0 38px;
+    }
+
+    .section-prices .section-container {
+        margin: 40px 50px 88px 50px;
+    }
+
+    .prices-title {
+        font-size: 35px;
+        line-height: 42px;
+        width: 135px;
+        text-align: center;
+    }
+
+    .prices-right {
+        margin-top: 100px;
+        height: auto;
+    }
+
+    .price-black {
+        font-size: 25px;
+        line-height: 35px;
+        width: auto;
+    }
+
+    .contact-us-button {
+        margin-top: 27.6px;
+        margin-bottom: 34px;
+    }
+    
+    .section-contacts .section-container {
+        height: 699px;
+        background-size: 200px 248.49px;
+        background-position: 52% bottom;
+        margin-top: 40px;
+    }
+
+    .contacts-city {
+        margin: 100px auto auto auto;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        margin: 33px auto 18px;
+    }
+
+    .footer-data {
+        width: 173px;
+    }
+
+    .social-list {
+        width: 188px;
+        height: 50px;
+        padding: 0;
+        margin: 0;
+        align-items: center;
     }
 }
