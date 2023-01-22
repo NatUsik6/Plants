@@ -498,63 +498,7 @@ figcaption {
     }
 }
 
-@media (max-width: 768px) {
-    header {
-        height: 117px;
-    }
-
-    h1 {
-        font-size: 35px;
-    }
-
-    .section-welcome .section-container {
-        margin: 40px 50px 70px 50px;
-        flex-direction: row-reverse;
-        align-items: flex-start;
-    }
-
-    .leafs {
-        height: 254px;
-        width: 280px;
-    }
-
-    .welcome {
-        width: 346px;
-    }
-
-    .welcome-text {
-        font-size: 16px;
-        line-height: 25px;
-        margin: 30px 0 36px 5px;
-    }
-
-    .section-about .section-container {
-        margin: 40px 50px 95px 50px;
-        flex-direction: column;
-    }
-
-    .about {
-        width: auto;
-    }
-
-    .about-title {
-        text-align: center;
-        width: 423px;
-        margin: 0 auto;
-        font-size: 35px;
-        line-height: 46px;
-    }
-
-    .about-text {
-        margin-top: 50px;
-    }
-
-    .houseplants {
-        width: 250px;
-        height: 258px;
-        margin-top: 68px;
-    }
-
+@media (max-width: 1010px) {
     .section-services .section-container {
         margin: 60px 50px 34px 50px;
     }
@@ -592,6 +536,66 @@ figcaption {
         width: 202px;
         height: 98px;
         padding: 0 38px;
+    }
+}
+
+@media (max-width: 925px) {
+    .section-about .section-container {
+        margin: 40px 50px 95px 50px;
+        flex-direction: column;
+    }
+
+    .about {
+        width: auto;
+    }
+
+    .about-title {
+        text-align: center;
+        width: 423px;
+        margin: 0 auto;
+        font-size: 35px;
+        line-height: 46px;
+    }
+
+    .about-text {
+        margin-top: 50px;
+    }
+
+    .houseplants {
+        width: 250px;
+        height: 258px;
+        margin-top: 68px;
+    }
+}
+
+@media (max-width: 790px) {
+    header {
+        height: 117px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .section-welcome .section-container {
+        margin: 40px 50px 70px 50px;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+    }
+
+    .leafs {
+        height: 254px;
+        width: 280px;
+    }
+
+    .welcome {
+        width: 346px;
+    }
+
+    .welcome-text {
+        font-size: 16px;
+        line-height: 25px;
+        margin: 30px 0 36px 5px;
     }
 
     .section-prices .section-container {
