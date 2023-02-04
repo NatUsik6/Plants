@@ -41,6 +41,11 @@ button:hover {
     cursor: pointer;
 }
 
+button.checked {
+    color: #FFFFFF;
+    background: #E06733;
+}
+
 ul {
     padding: 0;
 }
@@ -228,6 +233,11 @@ nav {
 
 figure {
     margin: 0 0 55px 0;
+    transition: .3s;
+}
+
+.blurred {
+    filter: blur(2px);
 }
 
 figcaption {
@@ -318,7 +328,6 @@ figcaption {
 
 .prices-categories {
     width: 330px;
-    height: 280px;
     border: 1px solid #E3E1D5;
     border-radius: 20px;
     margin-top: 60px;
@@ -326,14 +335,12 @@ figcaption {
 
 .prices-categories-inter {
     width: 250px;
-    height: 210px;
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 20px;
     line-height: 20px;
-    margin: 35px 40px;
-    background-color: white;
+    margin: 35px 40px 3px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -341,25 +348,90 @@ figcaption {
 
 .price-item {
     width: 170px;
-    height: 50px;
     background-color: #EDF2EC;
     border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 0 40px;
     cursor: pointer;
     transition: .3s;
+    margin-bottom: 32px;
+}
+
+.price-item.opened {
+    background: #D6E7D2;
 }
 
 .price-item:hover {
     background-color: #D6E7D2;
 }
 
+.price-item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
 .arrow {
     background-image: url(assets/accordion_btn.png);
     width: 16px;
     height: 16px;
+}
+
+.price-item.opened .arrow {
+    background-image: url(assets/accordion_btn_up.png);
+}
+
+.price-item:hover .arrow {
+    background-image: url(assets/accordion_btn2.png);
+}
+
+.price-item-secondary-container {
+    text-align: left;
+    margin: -6px 0 12px 0;
+    display: none;
+}
+
+.price-item.opened .price-item-secondary-container {
+    display: block;
+}
+
+.underline {
+    border-bottom: 0.5px solid #AEA1A1;
+}
+
+.price-item-secondary-container .text {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 10px;
+    margin-top: 6px;
+}
+
+.dollars {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: black;
+    margin-top: 8px;
+
+}
+
+.dollars span {
+    color: #E06733;
+    font-weight: 700;
+}
+
+.price-item-button {
+    width: 86px;
+    height: 25px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #717171;
+    border: none;
+    margin-top: 7px
 }
 
 .price-green {

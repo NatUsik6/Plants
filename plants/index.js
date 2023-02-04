@@ -1,12 +1,108 @@
 const burgerButton = document.querySelector(".burger-button");
 burgerButton.addEventListener('click', toggleNavVisibility);
 const navLinks = document.querySelectorAll(".nav-link");
-navLinks.forEach(navLink => navLink.addEventListener('click', toggleNavVisibility));
+navLinks.forEach(navLink => navLink.addEventListener('click', disableNavVisibility));
+
+function disableNavVisibility() {
+    const nav = document.querySelector("nav");
+    if (nav.classList.contains("visible")) {
+        card.classList.remove("visible");
+    }
+    document.body.style.overflow = '';
+}
 
 function toggleNavVisibility() {
     const nav = document.querySelector("nav");
     nav.classList.toggle('visible');
     document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
+}
+
+const gardenButton = document.querySelector("#garden-button");
+const lawnButton = document.querySelector("#lawn-button");
+const plantingButton = document.querySelector("#planting-button");
+
+gardenButton.addEventListener('click', toggleGardenCardsBlur);
+lawnButton.addEventListener('click', toggleLawnCardsBlur);
+plantingButton.addEventListener('click', togglePlantingCardsBlur);
+
+const radioButtons = document.querySelectorAll(".services-buttons button");
+radioButtons.forEach(button => button.addEventListener('click', toggleRadioButtons))
+
+function toggleGardenCardsBlur() {
+    if (this.classList.contains('checked')) {
+        unblurAllCards();
+    } else {
+        toggleCardsBlur('garden');
+    }
+}
+
+function toggleLawnCardsBlur() {
+    if (this.classList.contains('checked')) {
+        unblurAllCards();
+    } else {
+        toggleCardsBlur('lawn');
+    }
+}
+
+function togglePlantingCardsBlur() {
+    if (this.classList.contains('checked')) {
+        unblurAllCards();
+    } else {
+        toggleCardsBlur('planting');
+    }
+}
+
+function unblurAllCards() {
+    const cards = document.querySelectorAll('figure');
+    for (let card of cards) {
+        if (card.classList.contains("blurred")) {
+            card.classList.remove("blurred");
+        }
+    }
+}
+
+function toggleCardsBlur(className) {
+    const cardsToBlur = document.querySelectorAll(`figure:not(.${className})`);
+    const cardsToUnblur = document.querySelectorAll(`figure.${className}`);
+    for (let card of cardsToBlur) {
+        if (!card.classList.contains("blurred")) {
+            card.classList.add("blurred");
+        }
+    }
+
+    for (let card of cardsToUnblur) {
+        if (card.classList.contains("blurred")) {
+            card.classList.remove("blurred");
+        }
+    }
+}
+
+function toggleRadioButtons() {
+    const clickedButton = document.querySelector(`#${this.id}`);
+    clickedButton.classList.toggle('checked');
+
+    const buttonsToUncheck = document.querySelectorAll(`.services-buttons button:not(#${this.id})`);
+    for (let buttonToUncheck of buttonsToUncheck) {
+        if (buttonToUncheck.classList.contains("checked")) {
+            buttonToUncheck.classList.remove("checked");
+        }
+    }
+}
+
+const priceItemButtons = document.querySelectorAll('.price-item-button');
+priceItemButtons.forEach(button => button.addEventListener('click', event => event.stopPropagation()));
+const priceItems = document.querySelectorAll(".price-item");
+priceItems.forEach(priceItem => priceItem.addEventListener('click', openPriceItem));
+
+function openPriceItem() {
+    const priceItemsToClose = document.querySelectorAll(`.price-item:not(#${this.id})`);
+    for (let priceItem of priceItemsToClose) {
+        if (priceItem.classList.contains('opened')) {
+            priceItem.classList.remove('opened');
+        }
+    }
+
+    this.classList.toggle('opened');
 }
 
 console.log(`
