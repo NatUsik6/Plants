@@ -105,32 +105,73 @@ function openPriceItem() {
     this.classList.toggle('opened');
 }
 
-console.log(`
-1. Вёрстка соответствует макету. Ширина экрана 768px +24
-    блок <header> +2
-    секция welcome +3
-    секция about +4
-    секция service +4
-    секция prices +4
-    секция contacts +4
-    блок <footer> + 3
-2. Вёрстка соответствует макету. Ширина экрана 380px +24
-    блок <header> +2
-    секция welcome +3
-    секция about +4
-    секция service +4
-    секция prices +4
-    секция contacts +4
-    блок <footer> + 3
-3. Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +15
-    нет полосы прокрутки при ширине страницы от 1440рх до 380px +7
-    нет полосы прокрутки при ширине страницы от 380px до 320рх +8
-4. На ширине экрана 380рх и меньше реализовано адаптивное меню +22
-    при ширине страницы 380рх панель навигации скрывается, появляется бургер-иконка +2
-    при нажатии на бургер-иконку плавно появляется адаптивное меню +4
-    адаптивное меню соответствует цветовой схеме макета +4
-    при нажатии на крестик адаптивное меню плавно скрывается уезжая за экран +4
-    ссылки в адаптивном меню работают, обеспечивая плавную прокрутку по якорям +4
-    при клике по ссылке в адаптивном меню адаптивное меню плавно скрывается, также скрытие меню происходит если сделать клик вне данного окна +4
+const contactsCity = document.querySelector('.contacts-city');
+contactsCity.addEventListener('click', openContactsCitySelect);
+const contactsCityItems = document.querySelectorAll('.contacts-city-dropdown li');
+contactsCityItems.forEach(item => item.addEventListener('click', selectCity));
 
-Итоговая оценка: 75 баллов.`);
+function openContactsCitySelect() {
+    this.classList.toggle('opened');
+}
+
+function selectCity() {
+    const selectedCity = this.querySelector('p').textContent;
+    document.querySelector('span.city').textContent = selectedCity;
+    fillInContactData(selectedCity);
+    if (!contactsCity.classList.contains('selected')) {
+        contactsCity.classList.add('selected');
+    }
+
+    const contactsSection = contactsCity.parentElement;
+    if (!contactsSection.classList.contains('hide-background')) {
+        contactsSection.classList.add('hide-background')
+    }
+}
+
+function fillInContactData(selectedCity) {
+    const cityInfos = [
+        {
+            city: 'Canandaigua, NY',
+            phone: '+1 585 393 0001',
+            address: '151 Charlotte Street'
+        },
+        {
+            city: 'New York City',
+            phone: '+1 212 456 0002',
+            address: '9 East 91st Street'
+        },
+        {
+            city: 'Yonkers, NY',
+            phone: '+1 914 678 0003',
+            address: '511 Warburton Ave'
+        },
+        {
+            city: 'Sherrill, NY',
+            phone: '+1 315 908 0004',
+            address: '14 WEST Noyes BLVD'
+        }
+    ];
+
+    const selectedCityInfo = cityInfos.find(cityInfo => cityInfo.city == selectedCity);
+    document.querySelector('#contact-info-city').textContent = selectedCityInfo.city;
+    document.querySelector('#contact-info-phone').textContent = selectedCityInfo.phone;
+    document.querySelector('#contact-info-address').textContent = selectedCityInfo.address;
+}
+
+console.log(`
+1. При нажатии на кнопки:Gargens,Lawn,Planting происходит смена фокуса на услугах в разделе service +50
+    - При выборе одной услуги (нажатии одной кнопки), остальные карточки услуг принимают эффект blur, выбранная услуга остается неизменной + 20
+    - Пользователь может нажать одновременно две кнопки услуги, тогда эта кнопка тоже принимает стиль активной и карточки с именем услуги выходят из эффекта blur. При этом пользователь не может нажать одновременно все три кнопки услуг. При повторном нажатии на активную кнопку она деактивируется (становится неактивной) а привязанные к ней позиции возвращаются в исходное состояние (входит в состяние blur если есть еще активная кнопка или же перестають быть в блюре если это была единственная нажатая кнопка). +20
+    - Анимации плавного перемещения кнопок в активное состояние и карточек услуг в эффект blur +10
+
+2. Accordion в секции prices реализация 3-х выпадающих списков об услугах и ценах + 50
+    - При нажатии на dropdown кнопку появляется описание тарифов цен в соответствии с макетом. Внутри реализована кнопка order, которая ведет на секцию contacts, при нажатии на нее Accordion все еще остается открытым. +25
+    - Пользователь может самостоятельно закрыть содержимое нажав на кнопку dropup, но не может одновременно открыть все тарифы услуг, при открытии нового тарифа предыдущее автоматически закрывается. +25
+
+3. В разделе contacts реализован select с выбором городов +25
+    - В зависимости от выбора пользователя появляется блок с адресом и телефоном офиса в определенном городе +15
+    - При нажатии на кнопку Call us реализован вызов по номеру, который соответствует выбранному городу +10
+
+Итоговая оценка: 100 баллов.`);
+
+alert("Пожалуйста, не проверяйте до утра 07.02 (вторник). :)")
