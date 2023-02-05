@@ -69,48 +69,48 @@
                     <div class="services-content">
                         <h2 class="services-title">Service and our projects</h2>
                         <div class="services-buttons">
-                            <button>Gardens</button>
-                            <button>Lawn</button>
-                            <button>Planting</button>
+                            <button id="garden-button">Gardens</button>
+                            <button id="lawn-button">Lawn</button>
+                            <button id="planting-button">Planting</button>
                         </div>
                     </div>
                     <div class="services">
-                        <figure>
+                        <figure class="garden">
                             <div class="card-image first-card-image"></div>
                             <figcaption>
                                 <h3 class="card-title">Garden care</h3>
                                 <p class="card-text">Lorem Ipsum has been the industry</p>
                             </figcaption>
                         </figure>
-                        <figure>
+                        <figure class="planting">
                             <div class="card-image second-card-image"></div>
                             <figcaption>
                                 <h3 class="card-title">Planting</h3>
                                 <p class="card-text">Lorem Ipsum has been the industry</p>
                             </figcaption>
                         </figure>
-                        <figure>
+                        <figure class="lawn">
                             <div class="card-image third-card-image"></div>
                             <figcaption>
                                 <h3 class="card-title">Lawn care</h3>
                                 <p class="card-text">Lorem Ipsum has been the industry</p>
                             </figcaption>
                         </figure>
-                        <figure>
+                        <figure class="planting">
                             <div class="card-image fourth-card-image"></div>
                             <figcaption>
                                 <h3 class="card-title">Planting</h3>
                                 <p class="card-text">Lorem Ipsum has been the industry</p>
                             </figcaption>
                         </figure>
-                        <figure>
+                        <figure class="garden">
                             <div class="card-image fifth-card-image"></div>
                             <figcaption>
                                 <h3 class="card-title">Garden care</h3>
                                 <p class="card-text">Lorem Ipsum has been the industry</p>
                             </figcaption>
                         </figure>
-                        <figure>
+                        <figure class="planting">
                             <div class="card-image sixth-card-image"></div>
                             <figcaption>
                                 <h3 class="card-title">Planting</h3>
@@ -126,17 +126,44 @@
                         <h2 class="prices-title">Prices</h2>
                         <div class="prices-categories">
                             <div class="prices-categories-inter">
-                                <div class="price-item">
-                                    <span>Basics</span>
-                                    <div class="arrow"></div>
+                                <div id="basics-price-item" class="price-item">
+                                    <div class="price-item-container">
+                                        <span>Basics</span>
+                                        <div class="arrow"></div>
+                                    </div>
+                                    <div class="price-item-secondary-container">
+                                        <div class="underline"></div>
+                                        <p class="text">Release of Letraset sheets containing Lorem Ipsum passages, and
+                                            more recently</p>
+                                        <p class="dollars"><span>$15</span> / per hour</p>
+                                        <a href="#contacts"><button class="price-item-button">Order</button></a>
+                                    </div>
                                 </div>
-                                <div class="price-item">
-                                    <span>Standard</span>
-                                    <div class="arrow"></div>
+                                <div id="standard-price-item" class="price-item">
+                                    <div class="price-item-container">
+                                        <span>Standard</span>
+                                        <div class="arrow"></div>
+                                    </div>
+                                    <div class="price-item-secondary-container">
+                                        <div class="underline"></div>
+                                        <p class="text">Release of Letraset sheets containing Lorem Ipsum passages, and
+                                            more recently</p>
+                                        <p class="dollars"><span>$25</span> / per hour</p>
+                                        <a href="#contacts"><button class="price-item-button">Order</button></a>
+                                    </div>
                                 </div>
-                                <div class="price-item">
-                                    <span>Pro care</span>
-                                    <div class="arrow"></div>
+                                <div id="procare-price-item" class="price-item">
+                                    <div class="price-item-container">
+                                        <span>Pro care</span>
+                                        <div class="arrow"></div>
+                                    </div>
+                                    <div class="price-item-secondary-container">
+                                        <div class="underline"></div>
+                                        <p class="text">Release of Letraset sheets containing Lorem Ipsum passages, and
+                                            more recently</p>
+                                        <p class="dollars"><span>$35</span> / per hour</p>
+                                        <a href="#contacts"><button class="price-item-button">Order</button></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -154,8 +181,47 @@
                 <div class="section-container">
                     <h2 class="contacts-green">Contact us</h2>
                     <div class="contacts-city">
-                        <span class="city">City</span>
-                        <div class="arrow2"></div>
+                        <div class="contacts-city-select">
+                            <span class="city">City</span>
+                            <div class="arrow2"></div>
+                        </div>
+                        <div class="contacts-city-dropdown">
+                            <ul>
+                                <li>
+                                    <p class="city-dropdown-item-text">Canandaigua, NY</p>
+                                    <div class="city-underline"></div>
+                                </li>
+                                <li>
+                                    <p class="city-dropdown-item-text">New York City</p>
+                                    <div class="city-underline"></div>
+                                </li>
+                                <li>
+                                    <p class="city-dropdown-item-text">Yonkers, NY</p>
+                                    <div class="city-underline"></div>
+                                </li>
+                                <li>
+                                    <p class="city-dropdown-item-text">Sherrill, NY</p>
+                                    <div class="city-underline"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <table class="contact-info-table">
+                            <tr>
+                                <td class="contact-info-label">City:</td>
+                                <td id="contact-info-city" class="contact-info-text"></td>
+                            </tr>
+                            <tr>
+                                <td class="contact-info-label">Phone:</td>
+                                <td id="contact-info-phone" class="contact-info-text"></td>
+                            </tr>
+                            <tr>
+                                <td class="contact-info-label">Office adress:</td>
+                                <td id="contact-info-address" class="contact-info-text"></td>
+                            </tr>
+                        </table>
+                        <button class="contact-info-button">Call us</button>
                     </div>
                 </div>
             </section>
