@@ -17,38 +17,56 @@ function toggleNavVisibility() {
     document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
 }
 
-const gardenButton = document.querySelector("#garden-button");
-const lawnButton = document.querySelector("#lawn-button");
-const plantingButton = document.querySelector("#planting-button");
-
-gardenButton.addEventListener('click', toggleGardenCardsBlur);
-lawnButton.addEventListener('click', toggleLawnCardsBlur);
-plantingButton.addEventListener('click', togglePlantingCardsBlur);
-
 const radioButtons = document.querySelectorAll(".services-buttons button");
-radioButtons.forEach(button => button.addEventListener('click', toggleRadioButtons))
+radioButtons.forEach(button => button.addEventListener('click', toggleCardsBlur));
 
-function toggleGardenCardsBlur() {
-    if (this.classList.contains('checked')) {
-        unblurAllCards();
-    } else {
-        toggleCardsBlur('garden');
+const cardsInfo = {
+    garden: {
+        buttonId: 'garden-button',
+        isSelected: false
+    },
+    lawn: {
+        buttonId: 'lawn-button',
+        isSelected: false
+    },
+    planting: {
+        buttonId: 'planting-button',
+        isSelected: false
     }
-}
+};
 
-function toggleLawnCardsBlur() {
-    if (this.classList.contains('checked')) {
-        unblurAllCards();
-    } else {
-        toggleCardsBlur('lawn');
+function toggleCardsBlur() {
+    const currentCard = Object.values(cardsInfo).find(cardInfo => cardInfo.buttonId == this.id);
+
+    if (Object.values(cardsInfo).reduce((count, card) => count += card.isSelected ? 1 : 0, 0) == 2
+        && !currentCard.isSelected) {
+        return;
     }
-}
 
-function togglePlantingCardsBlur() {
-    if (this.classList.contains('checked')) {
+    currentCard.isSelected = !currentCard.isSelected;
+    this.classList.toggle('checked');
+
+    if (Object.values(cardsInfo).every(card => card.isSelected == false)) {
         unblurAllCards();
-    } else {
-        toggleCardsBlur('planting');
+        return;
+    }
+
+    for (let cardName in cardsInfo) {
+        if (cardsInfo[cardName].isSelected) {
+            const cardsToUnblur = document.querySelectorAll(`figure.${cardName}`);
+            for (let card of cardsToUnblur) {
+                if (card.classList.contains("blurred")) {
+                    card.classList.remove("blurred");
+                }
+            }
+        } else {
+            const cardsToBlur = document.querySelectorAll(`figure.${cardName}`);
+            for (let card of cardsToBlur) {
+                if (!card.classList.contains("blurred")) {
+                    card.classList.add("blurred");
+                }
+            }
+        }
     }
 }
 
@@ -57,34 +75,6 @@ function unblurAllCards() {
     for (let card of cards) {
         if (card.classList.contains("blurred")) {
             card.classList.remove("blurred");
-        }
-    }
-}
-
-function toggleCardsBlur(className) {
-    const cardsToBlur = document.querySelectorAll(`figure:not(.${className})`);
-    const cardsToUnblur = document.querySelectorAll(`figure.${className}`);
-    for (let card of cardsToBlur) {
-        if (!card.classList.contains("blurred")) {
-            card.classList.add("blurred");
-        }
-    }
-
-    for (let card of cardsToUnblur) {
-        if (card.classList.contains("blurred")) {
-            card.classList.remove("blurred");
-        }
-    }
-}
-
-function toggleRadioButtons() {
-    const clickedButton = document.querySelector(`#${this.id}`);
-    clickedButton.classList.toggle('checked');
-
-    const buttonsToUncheck = document.querySelectorAll(`.services-buttons button:not(#${this.id})`);
-    for (let buttonToUncheck of buttonsToUncheck) {
-        if (buttonToUncheck.classList.contains("checked")) {
-            buttonToUncheck.classList.remove("checked");
         }
     }
 }
@@ -173,5 +163,3 @@ console.log(`
     - При нажатии на кнопку Call us реализован вызов по номеру, который соответствует выбранному городу +10
 
 Итоговая оценка: 100 баллов.`);
-
-alert("Пожалуйста, не проверяйте до утра 07.02 (вторник). :)")
